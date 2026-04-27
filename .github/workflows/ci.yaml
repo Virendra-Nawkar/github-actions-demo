@@ -1,0 +1,14 @@
+name: Virendra CI workflow
+
+on:
+    push:
+
+jobs:
+    build:      #job ka name hai
+        runs-on: ubuntu-latest       #Github free runner (agent free)_
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4    #clone the code to ubuntu runner
+
+            - name: Setup Docker
+              uses: docker/setup-buildx-action@v4
